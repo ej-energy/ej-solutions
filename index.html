@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EJ Energy Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Raleway', sans-serif; }
+    .bg-brand { background-color: #B22222; }
+    .text-brand { color: #B22222; }
+    .hover\:text-brand:hover { color: #B22222; }
+    .bg-brand-dark { background-color: #8B0000; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Top bar -->
+  <div class="bg-brand text-white text-sm py-2 px-4 flex justify-between">
+    <div>+254 105 837658 | +254 714 034289</div>
+    <div><a href="mailto:ej.solution26@gmail.com" class="hover:underline">ej.solution26@gmail.com</a></div>
+  </div>
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-brand-dark text-white shadow">
+  <nav class="container mx-auto max-w-7xl px-4 py-4 flex justify-between items-center" aria-label="Main Navigation">
+    
+<!-- Logo -->
+<div class="flex items-center gap-3">
+  <img 
+    src="https://i.postimg.cc/RhBF6Cdj/company-logo.jpg" 
+    alt="EJ Energy Solutions Logo" 
+    class="w-12 h-12 object-contain shadow-md"
+  >
+  <span class="text-xl font-bold">
+    EJ Energy Solutions
+  </span>
+</div>
+    
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-5">
+      <li><a href="#about" class="nav-link hover:text-brand">About us</a></li>
+      <li><a href="#profile" class="nav-link hover:text-brand">Company Profile</a></li>
+      <li><a href="#sales" class="nav-link hover:text-brand">Products For Sale</a></li>
+      <li><a href="#projects" class="nav-link hover:text-brand">projects</a></li>
+      <li><a href="#contact" class="nav-link hover:text-brand">Contact Us</a></li>
+    </ul>
+    
+    <!-- Mobile Hamburger -->
+    <button id="menu-btn" aria-expanded="false" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    
+  </nav>
+  
+  <!-- Mobile Dropdown -->
+  <div id="menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden bg-brand-dark text-white px-4">
+    <a href="#about" class="nav-link block py-2 hover:text-brand">About Us</a>
+    <a href="#profile" class="nav-link block py-2 hover:text-brand">Company Profile</a>
+    <a href="#sales" class="nav-link block py-2 hover:text-brand">Products For Sale</a>
+    <a href="#projects" class="nav-link block py-2 hover:text-brand">Projects</a>
+    <a href="#contact" class="nav-link block py-2 hover:text-brand">Contact Us</a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  const links = document.querySelectorAll(".nav-link");
+
+  // Toggle mobile menu
+  btn.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", !expanded);
+
+    if (menu.style.maxHeight && menu.style.maxHeight !== "0px") {
+      menu.style.maxHeight = "0px";
+    } else {
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    }
+  });
+
+  // Highlight active link while scrolling
+  window.addEventListener("scroll", () => {
+    let fromTop = window.scrollY + 100;
+    links.forEach(link => {
+      let section = document.querySelector(link.getAttribute("href"));
+      if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+        link.classList.add("text-brand");
+      } else {
+        link.classList.remove("text-brand");
+      }
+    });
+  });
+</script>
+
+<!-- Hero -->
+<section id="hero" 
+  class="relative min-h-screen w-full flex items-center justify-center text-white bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://i.postimg.cc/dVthj1FJ/backgound.jpg');">
+  
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-4 max-w-2xl space-y-6">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg animate-fadeInUp">
+      Smart Power, Safe Homes
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl text-gray-200 animate-fadeInUp" style="animation-delay:0.3s;">
+      Experts in Solar & Electrical Installations — Trusted Services Across the Globe
+    </p>
+    <a href="#contact" 
+       class="inline-block bg-blue-600 px-6 py-3 rounded-full text-white font-semibold shadow-md hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/50 transition duration-300 animate-fadeInUp" 
+       style="animation-delay:0.6s;">
+      GET A QUOTE NOW
+    </a>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+    <svg class="w-6 h-6 text-white animate-bounce opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>
+
+<!-- Extra animation -->
+<style>
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+.animate-fadeInUp[style*="animation-delay"] {
+  opacity: 0; /* ensures elements stay hidden until their animation starts */
+}
+</style>
+
+<!-- About Us -->
+<section id="about" class="py-16 bg-gray-100 text-center px-4">
+  <h2 class="text-3xl font-bold text-brand mb-6">About Us</h2>
+  <div class="max-w-4xl mx-auto text-left space-y-6 leading-relaxed md:text-lg">
+    
+    <p>
+      EJ Energy Solutions was born out of a passion for powering homes and businesses with safe, reliable, and sustainable energy. 
+      What started as a small team of electricians in Nairobi has grown into a trusted solutions provider for electrical, solar, and security systems across Kenya.
+    </p>
+    
+    <p>
+      Over the years, we’ve built our reputation on one thing: putting our clients first. 
+      Whether it’s a simple home wiring project, a full-scale solar installation, or advanced security systems, 
+      we treat every job with the same level of care, professionalism, and attention to detail.
+    </p>
+    
+    <p>
+      Our people are at the heart of what we do. 
+      From engineers and technicians to customer support, 
+      we’re a team driven by innovation and committed to making energy solutions smarter, safer, and more affordable.
+    </p>
+
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h3 class="text-xl font-semibold text-brand mb-4">Why Choose EJ Energy Solutions?</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Tailored solutions designed to fit your exact needs</li>
+        <li>Reliable installations backed by skilled and certified experts</li>
+        <li>Commitment to safety, sustainability, and long-term value</li>
+        <li>Responsive support and after-sales service you can count on</li>
+      </ul>
+    </div>
+
+    <p>
+      Looking ahead, we’re excited to continue shaping the future of energy around the world 
+      from embracing green technologies to expanding smart home and EV charging solutions. 
+      Our journey is just beginning, and we’re here to power yours.
+    </p>
+  
+  </div>
+</section>
+
+<!-- Company Profile Section -->
+<section id="profile" class="py-16 bg-gray-100 text-center px-4">
+  <h2 class="text-3xl font-bold text-brand mb-6">Company Profile</h2>
+  <article class="max-w-5xl mx-auto text-left bg-white shadow-md p-8 rounded-lg space-y-6" x-data="{ open: null }">
+
+    <!-- Company Overview -->
+    <div>
+      <h3 
+        @click="open === 1 ? open = null : open = 1" 
+        class="text-2xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        EJ Energy Solutions
+      </h3>
+      <div x-show="open === 1" x-collapse>
+        <p>
+          EJ Energy Solutions is a fully registered and licensed company headquartered in Nairobi, Kenya. 
+          We provide end-to-end energy and electrical solutions for residential, commercial, and industrial clients. 
+          Our portfolio spans electrical installations, solar power systems, lighting, security solutions, generator backup systems, smart home technology, and EV charging stations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div>
+      <h3 
+        @click="open === 2 ? open = null : open = 2" 
+        class="text-xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        Our Mission
+      </h3>
+      <div x-show="open === 2" x-collapse>
+        <p>
+          To deliver innovative, reliable, and energy-efficient solutions while upholding the highest standards of safety, professionalism, and customer satisfaction.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <div>
+      <h3 
+        @click="open === 3 ? open = null : open = 3" 
+        class="text-xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        Our Vision
+      </h3>
+      <div x-show="open === 3" x-collapse>
+        <p>
+          To become the region’s leading provider of electrical and energy solutions, recognized for quality, innovation, and service excellence.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div>
+      <h3 
+        @click="open === 4 ? open = null : open = 4" 
+        class="text-xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        Our Core Values
+      </h3>
+      <div x-show="open === 4" x-collapse>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Quality & Excellence</li>
+          <li>Integrity & Professionalism</li>
+          <li>Innovation & Continuous Improvement</li>
+          <li>Customer Focus & Reliability</li>
+          <li>Sustainability & Safety</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h3 
+        @click="open === 5 ? open = null : open = 5" 
+        class="text-xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        Our Services
+      </h3>
+      <div x-show="open === 5" x-collapse>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Electrical Installations (Domestic, Commercial & Industrial)</li>
+          <li>Solar Power Systems (Off-grid, Hybrid & Grid-tied)</li>
+          <li>Security Solutions (CCTV, Alarms, Access Control, Electric Fencing)</li>
+          <li>Backup Generator Systems</li>
+          <li>Smart Home Automation</li>
+          <li>EV Charging Stations</li>
+          <li>Preventive & Emergency Maintenance</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div>
+      <h3 
+        @click="open === 6 ? open = null : open = 6" 
+        class="text-xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        Certifications & Compliance
+      </h3>
+      <div x-show="open === 6" x-collapse>
+        <p>
+          We operate in compliance with <strong>ERC, EPRA, IEC, and KEBS</strong> standards. 
+          Our engineers and technicians are fully certified and trained to deliver safe, reliable, and efficient installations that meet local and international requirements.
+        </p>
+      </div>
+    </div>
+
+    <!-- Commitment -->
+    <div>
+      <h3 
+        @click="open === 7 ? open = null : open = 7" 
+        class="text-xl font-semibold text-brand mb-2 cursor-pointer underline"
+      >
+        Our Commitment
+      </h3>
+      <div x-show="open === 7" x-collapse>
+        <p>
+          At EJ Energy Solutions, we are committed to excellence. 
+          Every project we undertake is guided by a promise to deliver sustainable, cost-effective, and customer-focused solutions that stand the test of time.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="bg-brand/10 p-4 rounded-lg text-center">
+      <p class="mt-2 text-lg font-medium">
+        For professional energy and electrical solutions, 
+        <a href="#contact" class="text-brand font-bold hover:underline">contact us today</a> 
+        for a consultation or detailed quotation.
+      </p>
+    </div>
+
+  </article>
+</section>
+
+<!-- Alpine.js for dropdowns -->
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Floating Cart Button -->
+<div id="cart-icon" class="fixed bottom-6 right-6 bg-brand text-white p-4 rounded-full shadow-lg cursor-pointer flex items-center justify-center hover:bg-brand-dark transition z-50">
+  🛒
+  <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">
+    0
+  </span>
+</div>
+
+<style>
+  /* Pulse animation */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
+  .pulse {
+    animation: pulse 0.3s ease;
+  }
+
+  /* Cart drawer styles */
+  #cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+  }
+  #cart-drawer.open {
+    transform: translateX(0);
+  }
+  #cart-drawer .cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  #cart-drawer .cart-footer {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+  }
+</style>
+
+<!-- Sales Section -->
+<section id="sales" class="py-16 bg-white text-center px-4">
+  <h2 class="text-3xl font-bold text-brand mb-10">Products for Sale</h2>
+
+  <div class="max-w-6xl mx-auto" x-data="{ openSection: '' }">
+
+<!-- Category Buttons -->
+<div class="flex flex-wrap justify-center gap-4 mb-10">
+  <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'batteries' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'batteries' ? null : 'batteries'">
+    Batteries
+  </button>
+
+  <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'panels' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'panels' ? null : 'panels'">
+    Solar Panels
+  </button>
+
+  <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'inverters' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'inverters' ? null : 'inverters'">
+    Inverters
+  </button>
+
+  <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'fittings' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'fittings' ? null : 'fittings'">
+    Fittings
+  </button>
+
+  <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'cables' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'cables' ? null : 'cables'">
+    Cables
+  </button>
+
+    <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'heat pumps' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'heat pumps' ? null : 'heat pumps'">
+    Heat Pumps
+  </button>
+
+    <button 
+    class="px-6 py-2 rounded font-bold border transition-colors"
+    :class="openSection === 'all in one' ? 'bg-brand text-white' : 'bg-gray-100 text-gray-800'"
+    @click="openSection = openSection === 'all in one' ? null : 'all in one'">
+    All In One
+  </button>
+</div>
+
+    <!-- Batteries -->
+    <div x-show="openSection === 'batteries'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/pXtyJH8L/byd-solar-battery.jpg" alt="BYD Battery" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">BYD Battery</h3>
+        <p class="text-gray-700 mb-2">BYD LV5.0 battery box 5kwh</p>
+        <p class="text-gray-700 mb-2">- Usable energy 5kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 100%</p>
+        <p class="text-gray-700 mb-2">- Dimentions (h/w/d) 195*595*255mm</p>
+        <p class="text-gray-700 mb-2">- Weight 42 kg's</p>
+        <p class="text-gray-700 mb-2">- Nominal voltage 51.2</p>
+        <p class="text-gray-700 mb-2">- Operating voltage 40-57.6v</p>
+        <p class="text-gray-700 mb-2">- Scalability max 32 inparalel(160kwh)</p>
+        <p class="text-gray-700 mb-2">- Aplications, ongrid/ongrid+backup/offgrid</p>
+        <p class="text-gray-700 mb-2">- Communication CAN/RS485</p>
+        <p class="text-gray-700 mb-2">- Compatible inverters Deye,Victron Energy,Solis,Voltronic power,Goodwe</p>
+        <p class="font-bold text-gray-900 line-through">KES 135,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 118,500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/6q8S1Xhb/goodwe-battery.jpg" alt="Goodwe Battery" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Goodwe Battery</h3>
+        <p class="text-gray-700 mb-2">Lynx A Series Lv</p>
+        <p class="text-gray-700 mb-2">- Usable energy 5kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 100%</p>
+        <p class="text-gray-700 mb-2">- Dimentions (w/h/d) 442*133*420mm(excluding hanger)</p>
+        <p class="text-gray-700 mb-2">- Weight 40 kg's</p>
+        <p class="text-gray-700 mb-2">- Nominal voltage 51.2</p>
+        <p class="text-gray-700 mb-2">- Operating voltage 47.4-57.6v</p>
+        <p class="text-gray-700 mb-2">- Scalability max 6 inparalel(30kwh)</p>
+        <p class="text-gray-700 mb-2">- Aplications, ongrid/ongrid+backup/offgrid</p>
+        <p class="text-gray-700 mb-2">- Communication CAN</p>
+        <p class="text-gray-700 mb-2">- Compatible inverters Deye,Solis,Voltronic power,Goodwe</p>
+        <p class="font-bold text-gray-900 line-through">KES 115,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 109,500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/jSjbypVj/byd.jpg" alt="Battery" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">BYD Flex BMU</h3>
+        <p class="text-gray-700 mb-2">LV Flex Lite</p>
+        <p class="text-gray-700 mb-2">- Usable energy 5kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 100%</p>
+        <p class="text-gray-700 mb-2">- Dimentions (h/w/d) 132*482*521mm</p>
+        <p class="text-gray-700 mb-2">- Weight 47 kg's</p>
+        <p class="text-gray-700 mb-2">- Nominal voltage 51.2</p>
+        <p class="text-gray-700 mb-2">- Operating voltage 43.2-57.6v</p>
+        <p class="text-gray-700 mb-2">- Scalability max 64 inparalel(320kwh)</p>
+        <p class="text-gray-700 mb-2">- Aplications, ongrid/ongrid+backup/offgrid</p>
+        <p class="text-gray-700 mb-2">- Communication CAN</p>
+        <p class="text-gray-700 mb-2">- For Compatible inverters refer to BYD battery box LV flex lite minimum configuration list</p>
+        <p class="font-bold text-gray-900 line-through">KES 155,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 144,000</p>
+        <div class="flex gap-2">
+         <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/0NYVdhNX/dyness.jpg" alt="Battery" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Dyness battery</h3>
+        <p class="text-gray-700 mb-2">Dyness DL 5.0c</p>
+        <p class="text-gray-700 mb-2">- Usable energy 5kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 90%</p>
+        <p class="text-gray-700 mb-2">- Dimentions (w/d/h) 558*545*150mm</p>
+        <p class="text-gray-700 mb-2">- Weight 54 kg's</p>
+        <p class="text-gray-700 mb-2">- Nominal voltage 51.2</p>
+        <p class="text-gray-700 mb-2">- Operating voltage 44.8-57.6v</p>
+        <p class="text-gray-700 mb-2">- Scalability max 50 inparalel(250kwh)</p>
+        <p class="text-gray-700 mb-2">- Aplications, ongrid/ongrid+backup/offgrid</p>
+        <p class="text-gray-700 mb-2">- Communication CAN/RS485/R232</p>
+        <p class="text-gray-700 mb-2">- Compatible inverters Deye,Solis,Voltronic power,Goodwe etc:-</p>
+        <p class="font-bold text-gray-900 line-through">KES 115,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 107,500</p>
+        <div class="flex gap-2">
+         <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solar Panels -->
+    <div x-show="openSection === 'panels'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/qq4S3yH2/JA.jpg" alt="solar" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">JA solar Panel</h3>
+        <p class="text-gray-700 mb-2">JA 550w bifacial panels</p>
+        <p class="text-gray-700 mb-2">- Power output more than 550w</p>
+        <p class="text-gray-700 mb-2">- high efficiency and increased energy yield</p>
+        <p class="text-gray-700 mb-2">- mono perc cell</p>
+        <p class="text-gray-700 mb-2">- 12 years product warranty and 30 years linear output warranty</p>
+        <p class="font-bold text-gray-900 line-through">KES 12,675</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 10,100</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/qq4S3yH2/JA.jpg" alt="solar" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">JA solar Panel</h3>
+        <p class="text-gray-700 mb-2">JA 590w bifacial panels</p>
+        <p class="text-gray-700 mb-2">- Power output more than 550w</p>
+        <p class="text-gray-700 mb-2">- high efficiency and increased energy yield</p>
+        <p class="text-gray-700 mb-2">- mono perc cell</p>
+        <p class="text-gray-700 mb-2">- 12 years product warranty and 30 years linear output warranty</p>
+        <p class="font-bold text-gray-900 line-through">KES 13,115</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 10,915</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/qq4S3yH2/JA.jpg" alt="solar" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">JA solar Panel</h3>
+        <p class="text-gray-700 mb-2">JA 605w bifacial panels</p>
+        <p class="text-gray-700 mb-2">- Power output more than 550w</p>
+        <p class="text-gray-700 mb-2">- high efficiency and increased energy yield</p>
+        <p class="text-gray-700 mb-2">- mono perc cell</p>
+        <p class="text-gray-700 mb-2">- 12 years product warranty and 30 years linear output warranty</p>
+        <p class="font-bold text-gray-900 line-through">KES 13,195</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 11,190</p>
+        <div class="flex gap-2">
+         <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/qq4S3yH2/JA.jpg" alt="solar" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">JA solar Panel</h3>
+        <p class="text-gray-700 mb-2">JA 615w bifacial panels</p>
+        <p class="text-gray-700 mb-2">- Power output more than 550w</p>
+        <p class="text-gray-700 mb-2">- high efficiency and increased energy yield</p>
+        <p class="text-gray-700 mb-2">- mono perc cell</p>
+        <p class="text-gray-700 mb-2">- 12 years product warranty and 30 years linear output warranty</p>
+        <p class="font-bold text-gray-900 line-through">KES 12,800</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 11,380</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inverters -->
+    <div x-show="openSection === 'inverters'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/RhRbp0rH/goodwe-inverter.jpg" alt="Goodwe Inverter" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name"> Goodwe ES Unique G2 Series Inverter</h3>
+        <p class="text-gray-700 mb-2">Single phase 6kwh hybrid LV</p>
+        <p class="text-gray-700 mb-2">- Smart control & monitoring with multiple protocal comunicatons</p>
+        <p class="text-gray-700 mb-2">- Compatible with lithium ion & lead acid batteries</p>
+        <p class="text-gray-700 mb-2">- Startup voltage 47v</p>
+        <p class="text-gray-700 mb-2">- maximum eficiency 97.6%</p>
+        <p class="text-gray-700 mb-2">- Number of mppt trackers (2)</p>
+        <p class="text-gray-700 mb-2">- Number of strings per mppt (1)</p>
+        <p class="text-gray-700 mb-2">- MPPT operating voltage 60-550v</p>
+        <p class="text-gray-700 mb-2">- Maximum input PV power 9000w</p>
+        <p class="text-gray-700 mb-2">- Comunication CAN,RS485,WIFI,LAN</p>
+        <p class="text-gray-700 mb-2">- User interface LED,WLAN+APP</p>
+        <p class="font-bold text-gray-900 line-through">KES -</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES -</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/0Q6kqL5g/TBB-inverter.jpg" alt="TBB Inverter" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">TBB Inverter</h3>
+        <p class="text-gray-700 mb-2">6KVA RIIO sun TBB hybrid</p>
+        <p class="text-gray-700 mb-2">- Transfomer based paralel and 3 phase upto 54kva</p>
+        <p class="text-gray-700 mb-2">- Compatible with lithium ion & lead acid batteries</p>
+        <p class="text-gray-700 mb-2">- Startup voltage 48v</p>
+        <p class="text-gray-700 mb-2">- maximum eficiency 94%</p>
+        <p class="text-gray-700 mb-2">- Number of mppt trackers (2)</p>
+        <p class="text-gray-700 mb-2">- Number of strings per mppt (1)</p>
+        <p class="text-gray-700 mb-2">- MPPT operating voltage 65-245v</p>
+        <p class="text-gray-700 mb-2">- Maximum input PV power 4400w/MPPT</p>
+        <p class="text-gray-700 mb-2">- Comunication RS485,WIFI,WLAN,GPRS</p>
+        <p class="text-gray-700 mb-2">- Maximum PV input current per tracker (A) 36+36</p>
+        <p class="font-bold text-gray-900 line-through">KES 144,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 135,000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/ncNLcV9c/raion-inverter.jpg" alt="Raion Inverter" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Raion Inverter</h3>
+        <p class="text-gray-700 mb-2">RAION J5 Hybrid 5000w</p>
+        <p class="text-gray-700 mb-2">- Highly flexible PV input upto 430v & 100a</p>
+        <p class="text-gray-700 mb-2">- Compatible with lithium ion & lead acid batteries</p>
+        <p class="text-gray-700 mb-2">- Startup voltage 40-66v</p>
+        <p class="text-gray-700 mb-2">- maximum eficiency 94%</p>
+        <p class="text-gray-700 mb-2">- Number of mppt trackers (1)</p>
+        <p class="text-gray-700 mb-2">- Number of strings per mppt (1)</p>
+        <p class="text-gray-700 mb-2">- MPPT operating voltage 120-430v</p>
+        <p class="text-gray-700 mb-2">- Maximum input PV power 6000w/MPPT</p>
+        <p class="text-gray-700 mb-2">- Comunication RS232,WIFI,dry contact,RS485</p>
+        <p class="text-gray-700 mb-2">- Maximum PV input current (A) 100</p>
+        <p class="text-gray-700 mb-2">- Maximum 9pcs in perallel</p>
+        <p class="font-bold text-gray-900 line-through">KES 72,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 64,500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/Gp8JTmqt/deye-invertor.jpg" alt="Deye Inverter" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Deye Inverter</h3>
+        <p class="text-gray-700 mb-2">SUN 6K SG05LP1-EU</p>
+        <p class="text-gray-700 mb-2">- Highly flexible PV input upto 430v</p>
+        <p class="text-gray-700 mb-2">- Compatible with lithium ion & lead acid batteries</p>
+        <p class="text-gray-700 mb-2">- Startup voltage 40-60v</p>
+        <p class="text-gray-700 mb-2">- maximum eficiency 97.6%</p>
+        <p class="text-gray-700 mb-2">- Number of mppt trackers (2)</p>
+        <p class="text-gray-700 mb-2">- Number of strings per mppt (2+2)</p>
+        <p class="text-gray-700 mb-2">- MPPT operating voltage 150-430v</p>
+        <p class="text-gray-700 mb-2">- Maximum input PV power 7800w</p>
+        <p class="text-gray-700 mb-2">- Comunication CAN,RS485</p>
+        <p class="text-gray-700 mb-2">- Maximum PV input current (A) 17+17</p>
+        <p class="text-gray-700 mb-2">- Colorful touch LCD,IP65 protection degree</p>
+        <p class="text-gray-700 mb-2">- Maximum 16pcs paralel for ongrid & offgrid operations</p>
+        <p class="font-bold text-gray-900 line-through">KES 138,000</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 124,500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fittings -->
+    <div x-show="openSection === 'fittings'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/dtYqBxdH/ej-solar-rail.png" alt="solar rail" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Aluminium Rails</h3>
+        <p class="text-gray-700 mb-2">4800mm</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 40000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/90Sy3jhW/Aluminium-lfoot.jpg" alt="l foot" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Aluminium L Foot</h3>
+        <p class="text-gray-700 mb-2">aluminium l foot</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 270</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/85d1Qdg5/midle-clamp.jpg" alt="midle clamp" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Aluminium Midle Clamp</h3>
+        <p class="text-gray-700 mb-2">aluminium midle clamp</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 270</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/T32QrTPP/end-clamp.jpg" alt="end clamp" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Aluminium End Clamp</h3>
+        <p class="text-gray-700 mb-2">aluminium end clamp</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 250</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/C14W4Sq6/Surge-protection-device-spd-2pole-0vr.jpg" alt="surge protecter" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Surge Protection Device</h3>
+        <p class="text-gray-700 mb-2">surge protection device(spd) 2pole 0vr</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 2500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/Z5Tjrpcv/Dc-double-pole.jpg" alt="Dc double pole" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Dc Double Pole</h3>
+        <p class="text-gray-700 mb-2">dc double pole c63</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 2000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/fW8bzhPZ/Y3-mc4-connector.jpg" alt="mc4 connector" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Y3 MC4 Connector</h3>
+        <p class="text-gray-700 mb-2">Y3 mc4 connector</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 1000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/zBP4Qpxx/Pv-isolater-switch.jpg" alt="Pv isolater switch" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Pv Isolater Switch</h3>
+        <p class="text-gray-700 mb-2">Pv isolater switch</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 4000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/v826P9b7/Battery-mccb.jpg" alt="Battery mccb" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Battery MCCB</h3>
+        <p class="text-gray-700 mb-2">Battery mccb 100a, 125a, 250a</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 9000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/4yc77Lqf/Mc4-connectors.jpg" alt="Mc4 connectors " class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">MC4 Connectors </h3>
+        <p class="text-gray-700 mb-2">Mc4 connectors </p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 230</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/ZqfrQkKF/distribution-board.jpg" alt="distribution board " class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Distribution Board </h3>
+        <p class="text-gray-700 mb-2">10way distribution board+Free double pole 100amps included</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 2500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+       <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/RVsJ91zC/abs-distribution-board.jpg" alt="distribution board " class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">ABS Distribution Board</h3>
+        <p class="text-gray-700 mb-2">6way abs distribution board</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 1500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+       <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/xT48B0Kc/Ac-Double-pole.jpg" alt="Ac Double pole " class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Ac Double Pole</h3>
+        <p class="text-gray-700 mb-2">ac Double pole c63</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/9MgHzfXf/Suntree-change-over-switch.jpg" alt="Suntree change over switch" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Suntree Change Over Switch</h3>
+        <p class="text-gray-700 mb-2">suntree change over switch 63amps</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 3300</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/VNbKXLFN/Automatic-suntree-changeover.jpg" alt="Ac Double pole " class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Automatic Suntree Changeover</h3>
+        <p class="text-gray-700 mb-2">automatic suntree changeover</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 9500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/xdybwwfb/Katko-manual-changeover.jpg" alt="Katko manual changeover " class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Katko Manual Changeover</h3>
+        <p class="text-gray-700 mb-2">katko manual changeover c63</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 2500</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/1zny66Tg/Double-pole-change-over.jpg" alt="double pole change over" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Double Pole Change Over</h3>
+        <p class="text-gray-700 mb-2">Double pole change over c63</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 1800</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/Prwb6Fwc/Automatic-avs-c63.jpg" alt="Automatic avs" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Automatic AVS</h3>
+        <p class="text-gray-700 mb-2">Automatic avs c63(different brands)</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 2300</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+   <!-- Cables -->
+    <div x-show="openSection === 'cables'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/63PFPyy3/pv-cable.jpg" alt="pv cable" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">PV Cable</h3>
+        <p class="text-gray-700 mb-2">Upto 1000vdc</p>
+        <p class="font-bold text-green-600 mb-3 product-price">10mm @KES 350</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/63PFPyy3/pv-cable.jpg" alt="pv cable" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">PV Cable</h3>
+        <p class="text-gray-700 mb-2">Upto 1000vdc</p>
+        <p class="font-bold text-green-600 mb-3 product-price">6mm @KES 160</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/63PFPyy3/pv-cable.jpg" alt="pv cable" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">PV Cable</h3>
+        <p class="text-gray-700 mb-2">Upto 1000vdc</p>
+        <p class="font-bold text-green-600 mb-3 product-price">4mm @KES 130</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/VLfrtGFK/Battery-cables.jpg" alt="Battery Cables" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Battery Cables</h3>
+        <p class="text-gray-700 mb-2">Battery cables 25mm+free cable lags</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 650</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product placeholder">
+        <img src="https://via.placeholder.com/400x200?text=Coming+Soon" alt="Coming Soon" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Coming Soon</h3>
+        <p class="text-gray-700 mb-2">Stay tuned for updates</p>
+        <p class="font-bold text-gray-900 line-through">KES —</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES —</p>
+        <div class="flex gap-2">
+          <a href="#" class="buy-btn bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed">Coming Soon</a>
+          <button disabled class="add-cart-btn bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed">N/A</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product placeholder">
+        <img src="https://via.placeholder.com/400x200?text=Coming+Soon" alt="Coming Soon" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Coming Soon</h3>
+        <p class="text-gray-700 mb-2">Stay tuned for updates</p>
+        <p class="font-bold text-gray-900 line-through">KES —</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES —</p>
+        <div class="flex gap-2">
+          <a href="#" class="buy-btn bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed">Coming Soon</a>
+          <button disabled class="add-cart-btn bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed">N/A</button>
+        </div>
+      </div>
+    </div>
+      
+   <!-- heat pumps -->
+    <div x-show="openSection === 'heat pumps'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/W1FLs52N/Goodheat-heat-pump.jpg" alt="heat pump" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Goodheat Heat Pump 210ltrs</h3>
+        <p class="text-gray-700 mb-2">- Rated input power 0.577kw</p>
+        <p class="text-gray-700 mb-2">- Tank capacity 210ltrs</p>
+        <p class="text-gray-700 mb-2">- Maximum current 15A/9A*</p>
+        <p class="text-gray-700 mb-2">- Rated heating capacity 3kw</p>
+        <p class="text-gray-700 mb-2">- Backup heater 1.6kw</p>
+        <p class="text-gray-700 mb-2">- Water temperature range 15°C-65°C</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 215,000</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/W1FLs52N/Goodheat-heat-pump.jpg" alt="heat pump" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Goodheat Heat Pump 270ltrs</h3>
+        <p class="text-gray-700 mb-2">- Rated input power 0.577kw</p>
+        <p class="text-gray-700 mb-2">- Tank capacity 270ltrs</p>
+        <p class="text-gray-700 mb-2">- Maximum current 15A/9A*</p>
+        <p class="text-gray-700 mb-2">- Rated heating capacity 3kw</p>
+        <p class="text-gray-700 mb-2">- Backup heater 1.6kw</p>
+        <p class="text-gray-700 mb-2">- Water temperature range 15°C-65°C</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 255,000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+       <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/W1FLs52N/Goodheat-heat-pump.jpg" alt="heat pump" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Goodheat Heat Pump 320ltrs</h3>
+        <p class="text-gray-700 mb-2">- Rated input power 0.558kw</p>
+        <p class="text-gray-700 mb-2">- Tank capacity 320ltrs</p>
+        <p class="text-gray-700 mb-2">- Maximum current 15A/9A*</p>
+        <p class="text-gray-700 mb-2">- Rated heating capacity 2.9kw</p>
+        <p class="text-gray-700 mb-2">- Backup heater 1.6kw</p>
+        <p class="text-gray-700 mb-2">- Water temperature range 15°C-65°C</p>
+        <p class="text-gray-700 mb-2">- IP rating ipx4</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 290,000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/wTFfnLLV/Terasun-heat-pump.jpg" alt="heat pump" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Terasun Heat Pump 200ltrs</h3>
+        <p class="text-gray-700 mb-2">- Rated input power 0.5kw</p>
+        <p class="text-gray-700 mb-2">- Tank capacity 200ltrs</p>
+        <p class="text-gray-700 mb-2">- Maximum current 2A</p>
+        <p class="text-gray-700 mb-2">- Rated heating capacity 1.8kw</p>
+        <p class="text-gray-700 mb-2">- Backup heater 2kw</p>
+        <p class="text-gray-700 mb-2">- Water temperature range 25°C-60°C</p>
+        <p class="text-gray-700 mb-2">- IP rating ipx66</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 220,000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/wTFfnLLV/Terasun-heat-pump.jpg" alt="heat pump" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Terasun Heat Pump 300ltrs</h3>
+        <p class="text-gray-700 mb-2">- Rated input power 0.5kw</p>
+        <p class="text-gray-700 mb-2">- Tank capacity 300ltrs</p>
+        <p class="text-gray-700 mb-2">- Maximum current 2A</p>
+        <p class="text-gray-700 mb-2">- Rated heating capacity 1.8kw</p>
+        <p class="text-gray-700 mb-2">- Backup heater 2kw</p>
+        <p class="text-gray-700 mb-2">- Water temperature range 25°C-60°C</p>
+        <p class="text-gray-700 mb-2">- IP rating ipx66</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 295,000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/wTFfnLLV/Terasun-heat-pump.jpg" alt="heat pump" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Terasun Heat Pump 270ltrs</h3>
+        <p class="text-gray-700 mb-2">- Rated input power 0.5kw</p>
+        <p class="text-gray-700 mb-2">- Tank capacity 270ltrs</p>
+        <p class="text-gray-700 mb-2">- Maximum current 2A</p>
+        <p class="text-gray-700 mb-2">- Rated heating capacity 3.6kw</p>
+        <p class="text-gray-700 mb-2">- Backup heater 2.4kw</p>
+        <p class="text-gray-700 mb-2">- Water temperature range 25°C-60°C</p>
+        <p class="text-gray-700 mb-2">- IP rating ipx66</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 320,000</p>
+        <div class="flex gap-2">
+          <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+      
+   <!-- all in one -->
+    <div x-show="openSection === 'all in one'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
+      <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/jS1b0GPF/livoltek.jpg" alt="all in one" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Livoltek Hyper 5000</h3>
+        <p class="text-gray-700 mb-2">- Max pv input power 7500w</p>
+        <p class="text-gray-700 mb-2">- MPPT voltage range 125-550v</p>
+        <p class="text-gray-700 mb-2">- MPPT strings/MPPT 2/1</p>
+        <p class="text-gray-700 mb-2">- Battery voltage 40-60v</p>
+        <p class="text-gray-700 mb-2">- Battery nominal energy 5.12kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 90%</p>
+        <p class="text-gray-700 mb-2">- Scalability upto 5 modules/25kwh</p>
+        <p class="text-gray-700 mb-2">- Output power 5000w</p>
+        <p class="text-gray-700 mb-2">- Max efficiency 97.8%</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 345,000</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+       <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/QtwmjJSq/megatank.jpg" alt="all in one" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">Megatank</h3>
+        <p class="text-gray-700 mb-2">- Max pv input power 7200w</p>
+        <p class="text-gray-700 mb-2">- MPPT voltage range 125-450v</p>
+        <p class="text-gray-700 mb-2">- MPPT strings/MPPT 1</p>
+        <p class="text-gray-700 mb-2">- Low freq inverter(transfomer based)</p>
+        <p class="text-gray-700 mb-2">- Battery voltage 40-66v</p>
+        <p class="text-gray-700 mb-2">- Battery nominal energy 10.24kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 80%</p>
+        <p class="text-gray-700 mb-2">- Scalability upto 5 modules/25kwh</p>
+        <p class="text-gray-700 mb-2">- Output power 8000w</p>
+        <p class="text-gray-700 mb-2">- Max efficiency 97.8%</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 345,000</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+       <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/65wjqYBN/srne.jpg" alt="all in one" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">SRNE EOTO2S</h3>
+        <p class="text-gray-700 mb-2">- Max pv input power 1500w</p>
+        <p class="text-gray-700 mb-2">- MPPT voltage range 30-95v</p>
+        <p class="text-gray-700 mb-2">- MPPT strings/MPPT 1</p>
+        <p class="text-gray-700 mb-2">- Battery voltage 22.4-28.8v</p>
+        <p class="text-gray-700 mb-2">- Battery nominal energy 2.56kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 80%</p>
+        <p class="text-gray-700 mb-2">- Output power 3000w</p>
+        <p class="text-gray-700 mb-2">- USB output (A 5-12v/18w),(C 5-12v/24w)</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 90,000</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+       <div class="bg-gray-100 p-4 rounded shadow text-left product">
+        <img src="https://i.postimg.cc/wxWyRBpg/SRNE.jpg" alt="all in one" class="w-full h-40 object-cover rounded mb-3">
+        <h3 class="text-xl font-semibold text-brand product-name">SRNE EOTO5S</h3>
+        <p class="text-gray-700 mb-2">- Max pv input power 5500w</p>
+        <p class="text-gray-700 mb-2">- MPPT voltage range 125-450v</p>
+        <p class="text-gray-700 mb-2">- MPPT strings/MPPT 1</p>
+        <p class="text-gray-700 mb-2">- Battery voltage 44.8-57.6v</p>
+        <p class="text-gray-700 mb-2">- Battery nominal energy 5.12kwh</p>
+        <p class="text-gray-700 mb-2">- DOD 80%</p>
+        <p class="text-gray-700 mb-2">- Scalability upto 5 modules/25kwh</p>
+        <p class="text-gray-700 mb-2">- Output power 5000w</p>
+        <p class="font-bold text-green-600 mb-3 product-price">KES 180,000</p>
+        <div class="flex gap-2">
+           <a href="#" target="_blank" class="buy-btn bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark transition">Buy Now</a>
+          <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<script src="//unpkg.com/alpinejs" defer></script>
+
+<!-- Cart Drawer -->
+<div id="cart-drawer">
+  <div class="flex justify-between items-center p-4 border-b">
+    <h3 class="text-2xl font-bold text-brand">Your Cart</h3>
+    <button id="close-cart" class="text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <p class="font-bold text-lg">Total: <span id="cart-total">KES 0</span></p>
+    <a id="checkout-btn" href="#" target="_blank" class="mt-4 inline-block bg-brand text-white px-6 py-2 rounded hover:bg-brand-dark transition w-full text-center">
+      Checkout
+    </a>
+  </div>
+</div>
+<script>
+const whatsappNumber = "254105837658";
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartIcon = document.getElementById("cart-icon");
+const cartCount = document.getElementById("cart-count");
+const cartDrawer = document.getElementById("cart-drawer");
+const closeCart = document.getElementById("close-cart");
+
+// Open/Close cart drawer
+cartIcon.addEventListener("click", () => cartDrawer.classList.add("open"));
+closeCart.addEventListener("click", () => cartDrawer.classList.remove("open"));
+
+// Fly-to-cart animation
+function flyToCart(imgElement){
+  if(!imgElement) return;
+  const flyImg = imgElement.cloneNode(true);
+  const rect = imgElement.getBoundingClientRect();
+  flyImg.style.position = 'fixed';
+  flyImg.style.top = rect.top + 'px';
+  flyImg.style.left = rect.left + 'px';
+  flyImg.style.width = rect.width + 'px';
+  flyImg.style.height = rect.height + 'px';
+  flyImg.style.transition = 'all 0.7s ease-in-out';
+  flyImg.style.zIndex = 1000;
+  document.body.appendChild(flyImg);
+
+  const cartRect = cartIcon.getBoundingClientRect();
+  setTimeout(()=>{
+    flyImg.style.top = cartRect.top + 'px';
+    flyImg.style.left = cartRect.left + 'px';
+    flyImg.style.width = '30px';
+    flyImg.style.height = '30px';
+    flyImg.style.opacity = 0.5;
+  },50);
+
+  flyImg.addEventListener('transitionend', ()=> flyImg.remove());
+}
+
+// Setup Buy Now & Add to Cart
+document.querySelectorAll(".product").forEach(product => {
+  if(product.classList.contains("placeholder")) return;
+
+  const name = product.querySelector(".product-name").innerText.trim();
+  const price = product.querySelector(".product-price").innerText.trim();
+  const priceValue = parseInt(price.replace(/[^0-9]/g, ""));
+  const btn = product.querySelector(".buy-btn");
+  const addCartBtn = product.querySelector(".add-cart-btn");
+
+  // Buy Now
+  btn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`I'm interested in the ${name} (${price}). Please provide more details.`)}`;
+
+  // Add to Cart
+  addCartBtn.addEventListener("click", () => {
+    cart.push({name, price, priceValue});
+    saveCart();
+    updateCart();
+    flyToCart(product.querySelector('img'));
+  });
+});
+
+function saveCart(){
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCart(){
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const checkoutBtn = document.getElementById("checkout-btn");
+
+  cartCount.innerText = cart.length;
+  cartIcon.style.display = cart.length > 0 ? 'flex' : 'none';
+
+  if(cart.length === 0){
+    cartItems.innerHTML = '<p class="text-gray-500 italic">Your cart is empty.</p>';
+    cartTotal.innerText = 'KES 0';
+    checkoutBtn.href = '#';
+    return;
+  }
+
+  cartItems.innerHTML = '';
+  let total = 0;
+
+  cart.forEach((item,index)=>{
+    total += item.priceValue;
+    const li = document.createElement("div");
+    li.classList.add("flex","justify-between","items-center","mb-2");
+    li.innerHTML = `<span>${item.name} - ${item.price}</span>
+                    <button onclick="removeFromCart(${index})" class="text-red-600 hover:underline">Remove</button>`;
+    cartItems.appendChild(li);
+  });
+
+  cartTotal.innerText = `KES ${total.toLocaleString()}`;
+  checkoutBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    `Hello, I'm interested in buying the following products:\n\n${cart.map(i=>`- ${i.name} (${i.price})`).join("\n")}\n\nTotal: KES ${total.toLocaleString()}`
+  )}`;
+
+  cartCount.classList.remove("pulse");
+  void cartCount.offsetWidth;
+  cartCount.classList.add("pulse");
+}
+
+function removeFromCart(index){
+  cart.splice(index,1);
+  saveCart();
+  updateCart();
+}
+
+updateCart();
+</script>
+ </div>
+   </div>
+   </section>
+  
+  </div>
+</section>
+<!-- Divider -->
+<div class="border-t-2 border-gray-200 my-12 w-3/4 mx-auto"></div>  
+<section id="projects" 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Overlay</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <!-- Main Page -->
+  <div id="mainPage" class="text-center">
+    <p class="text-gray-600 mb-10">Click below to explore our featured projects</p>
+    
+<!-- Centered Projects Button -->
+<div class="flex justify-center mt-12">
+  <button id="openProjects" 
+    class="px-12 py-4 bg-gradient-to-r from-red-500 via-red-600 to-red-700 
+           text-white font-semibold text-lg rounded-full shadow-md 
+           transition duration-300 transform hover:scale-105 hover:shadow-2xl 
+           focus:outline-none focus:ring-4 focus:ring-red-300 animate-glow">
+    View Our Projects
+  </button>
+</div>
+
+<!-- Glow Animation -->
+<style>
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 15px rgba(239, 68, 68, 0.6), 
+                  0 0 30px rgba(239, 68, 68, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(239, 68, 68, 0.8), 
+                  0 0 50px rgba(239, 68, 68, 0.6);
+    }
+  }
+
+  .animate-glow {
+    animation: glow 2s infinite ease-in-out;
+  }
+</style>
+
+
+
+  <!-- Projects Overlay -->
+  <div id="projectsOverlay" 
+       class="fixed inset-0 bg-white z-50 hidden flex flex-col opacity-0 transition-opacity duration-300 ease-in-out">
+    
+    <!-- Header with Close Button -->
+    <div class="flex justify-between items-center p-4 border-b shadow">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand">Projects</h2>
+      <button id="closeProjects" 
+        class="text-3xl font-bold text-gray-600 hover:text-black">&times;</button>
+    </div>
+
+    <!-- Content (scrollable grid) -->
+    <div class="flex-1 overflow-y-auto p-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <img src="https://i.postimg.cc/ZYdHpbZM/EJ-Energy.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 1">
+        <img src="https://i.postimg.cc/SstPsD6Y/EJ-Energy-Solutions.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 2">
+        <img src="https://i.postimg.cc/B6hfQvsM/Whats-App-Image-2025-06-17-at-13-01-31-3.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 3">
+        <img src="https://i.postimg.cc/44P6zmqw/Ej-Energy-Solutions.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 4">
+        <img src="https://i.postimg.cc/1txmjTrm/heat-pump.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 5">
+        <img src="https://i.postimg.cc/y6rPn3Jp/livotec.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 7">
+         <img src="https://i.postimg.cc/BQRR7Q7Z/4.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 8">
+         <img src="https://i.postimg.cc/yNy5Nh10/5.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 9">
+         <img src="https://i.postimg.cc/cCr5TVQM/6.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 10">
+         <img src="https://i.postimg.cc/Mpkrb3X6/7.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 11">
+         <img src="https://i.postimg.cc/KzY9vdpq/ej8.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 12">
+         <img src="https://i.postimg.cc/dQhY5XQW/ej9.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 13">
+         <img src="https://i.postimg.cc/dVjP7c6z/ej10.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 14">
+         <img src="https://i.postimg.cc/nzM6wjxY/ej11.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 15">
+         <img src="https://i.postimg.cc/YCkTBy7s/ej12.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 16">
+         <img src="https://i.postimg.cc/B68VBr5F/ej13.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 17">
+         <img src="https://i.postimg.cc/mg53ytdx/ej14.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 18">
+         <img src="https://i.postimg.cc/Xq49YFvF/ej15.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 19">
+         <img src="https://i.postimg.cc/X729nr6b/ej16.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 20">
+         <img src="https://i.postimg.cc/bJH2WJRd/ej17.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 21">
+         <img src="https://i.postimg.cc/vH1Z6T6s/ej18.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 22">
+        <img src="https://i.postimg.cc/SQPyq41P/ej19.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 23">
+        <img src="https://i.postimg.cc/d0nYfcT6/ej20.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 24">
+        <img src="https://i.postimg.cc/jqDDyZpL/ej21.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 25">
+        <img src="https://i.postimg.cc/DZpQz0RM/ej22.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 26">
+        <img src="https://i.postimg.cc/TPRnqnxd/ej23.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 27">
+        <img src="https://i.postimg.cc/prnjXZfY/ej24.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 28">
+        <img src="https://i.postimg.cc/qMym1cPJ/ej25.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 29">
+        <img src="https://i.postimg.cc/DZS6L1Qn/ej26.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 30">
+         <img src="https://i.postimg.cc/66GzQL5c/ej27.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 31">
+         <img src="https://i.postimg.cc/wvFkC06y/ej28.jpg" 
+             class="w-full h-52 object-cover rounded cursor-pointer lightbox-img" alt="Solar 32">
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" 
+       class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50">
+    <span id="closeLightbox" 
+          class="absolute top-5 right-8 text-white text-3xl cursor-pointer">&times;</span>
+    <img id="lightboxImg" src="" 
+         class="max-w-4xl max-h-[90vh] rounded shadow-lg">
+  </div>
+
+  <script>
+    const projectsOverlay = document.getElementById("projectsOverlay");
+    const openProjects = document.getElementById("openProjects");
+    const closeProjects = document.getElementById("closeProjects");
+
+    // Open Projects Overlay
+    openProjects.addEventListener("click", () => {
+      projectsOverlay.classList.remove("hidden");
+      setTimeout(() => {
+        projectsOverlay.classList.remove("opacity-0");
+        projectsOverlay.classList.add("opacity-100");
+      }, 10);
+    });
+
+    // Close Projects Overlay
+    closeProjects.addEventListener("click", () => {
+      projectsOverlay.classList.remove("opacity-100");
+      projectsOverlay.classList.add("opacity-0");
+      setTimeout(() => {
+        projectsOverlay.classList.add("hidden");
+      }, 300);
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const closeLightbox = document.getElementById("closeLightbox");
+    const images = document.querySelectorAll(".lightbox-img");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.remove("hidden");
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeLightbox.addEventListener("click", () => {
+      lightbox.classList.add("hidden");
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+  
+  </div>
+</section>
+<!-- Divider -->
+<div class="border-t-2 border-gray-200 my-12 w-3/4 mx-auto"></div>  
+<!-- Contact -->
+<section id="contact" class="py-16 bg-gray-100 text-center px-4">
+  <h2 class="text-3xl font-bold text-brand mb-6">Contact Us</h2>
+  <p class="mb-4">We would love to hear from you! Reach us via WhatsApp, phone or email.</p>
+
+  <!-- Phone, Email, Location -->
+  <p class="mb-2 text-lg">📞 Phone: 
+    <a href="tel:+254105837658" class="hover:underline">0105 837 658</a> / 
+    <a href="tel:+254714034289" class="hover:underline">0714 034 289</a>
+  </p>
+  <p class="mb-2 text-lg">📧 Email: 
+    <a href="mailto:ej.solution26@gmail.com" class="text-brand hover:underline">ej.solution26@gmail.com</a>
+  </p>
+  <p class="mb-2 text-lg">📍 Location: Nairobi, Kenya</p>
+  <p class="mb-4 text-lg">📱 Social: 
+    <a href="#" class="text-blue-600 hover:underline">Instagram</a> | 
+    <a href="#" class="text-pink-600 hover:underline">Facebook</a>
+  </p>
+
+  <!-- WhatsApp & Call Buttons -->
+  <div class="flex justify-center gap-4 mt-4">
+    <a href="https://wa.me/+254105837658" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">WhatsApp</a>
+    <a href="tel:+254105837658" class="inline-block bg-brand text-white px-6 py-2 rounded hover:bg-brand-dark transition">Call Now</a>
+  </div>
+
+  <!-- Google Map -->
+  <div class="mt-10 max-w-3xl mx-auto">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.9572934760026!2d36.821946!3d-1.292066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d15dd99225%3A0x6b5d9a3ecf06ef9a!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1651599154560!5m2!1sen!2ske" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-white text-center py-6">
+    <p>&copy; 2023 EJ Energy Solutions. All rights reserved.</p>
+    <div class="mt-2 space-x-4">
+      <a href="#" class="hover:underline">WhatsApp</a>
+      <a href="#" class="hover:underline">Instagram</a>
+      <a href="#" class="hover:underline">Facebook</a>
+    </div>
+  </footer>
+</body>
+</html>
