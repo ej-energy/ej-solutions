@@ -718,24 +718,38 @@
     </div>
 
     <!-- Buttons (always visible) -->
-    <div class="flex gap-2 mt-4">
+    <div class="flex flex-wrap gap-2 mt-4">
       <a href="#" target="_blank" 
          class="buy-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
          Buy Now
       </a>
+
       <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
          Add to Cart
       </button>
+
+      <!-- WhatsApp Share Button -->
+      <a id="whatsapp-share" 
+         href="https://api.whatsapp.com/send?text=Check%20out%20this%20Deye%20Inverter%20for%20KES%20130,500%20on%20EJ%20Energy%20Solutions!%20https://ej-energy.com" 
+         target="_blank" 
+         class="bg-[#25D366] text-white px-4 py-2 rounded hover:bg-green-500 transition flex items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 mr-2"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.15-.198.297-.772.966-.946 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.672-1.611-.921-2.207-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.1 3.201 5.078 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.002c-5.522 0-10 4.477-10 10 0 1.768.467 3.507 1.354 5.037l-1.437 5.261 5.387-1.415a9.949 9.949 0 004.696 1.115h.001c5.523 0 10-4.478 10-10 0-2.67-1.043-5.183-2.934-7.072A9.954 9.954 0 0012.004 2zM12 20a7.94 7.94 0 01-4.064-1.102l-.29-.172-3.194.839.853-3.13-.181-.321A7.94 7.94 0 014 12a8 8 0 0116 0c0 4.411-3.589 8-8 8z"/></svg>
+         Share
+      </a>
     </div>
   </div>
-
+  
   <script>
     function toggleDescription(product) {
-      // Prevent the buttons from triggering the toggle when clicked
-      if (event.target.closest('.buy-btn') || event.target.closest('.add-cart-btn')) return;
+      // prevent toggling when clicking buttons
+      if (event.target.closest('.buy-btn') || event.target.closest('.add-cart-btn') || event.target.closest('#whatsapp-share')) return;
       product.classList.toggle('open');
     }
   </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
