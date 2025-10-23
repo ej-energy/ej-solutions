@@ -670,7 +670,75 @@
         </div>
       </div>
     </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deye Inverter Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .description { display: none; }
+    .product.open .description { display: block; animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 flex justify-center py-10">
 
+  <div onclick="toggleDescription(this)" 
+       class="bg-gray-100 p-4 rounded shadow text-left product cursor-pointer max-w-sm hover:shadow-lg transition">
+
+    <img src="https://i.postimg.cc/Gp8JTmqt/deye-invertor.jpg" 
+         alt="Deye Inverter" 
+         class="w-full h-40 object-cover rounded mb-3">
+
+    <h3 class="text-xl font-semibold text-brand product-name">Deye Inverter</h3>
+
+    <p class="font-bold text-gray-900 line-through">KES 138,000</p>
+    <p class="font-bold text-green-600 mb-3 product-price">KES 130,500</p>
+
+    <!-- Hidden Description -->
+    <div class="description text-gray-700 space-y-1 mt-2">
+      <p>SUN 6K SG05LP1-EU</p>
+      <p>- Highly flexible PV input up to 430V</p>
+      <p>- Compatible with lithium-ion & lead-acid batteries</p>
+      <p>- Startup voltage 40–60V</p>
+      <p>- Maximum efficiency 97.6%</p>
+      <p>- Number of MPPT trackers: 2</p>
+      <p>- Number of strings per MPPT: 2+2</p>
+      <p>- MPPT operating voltage 150–430V</p>
+      <p>- Maximum input PV power 7800W</p>
+      <p>- Communication: CAN, RS485</p>
+      <p>- Maximum PV input current (A): 17+17</p>
+      <p>- Colorful touch LCD, IP65 protection</p>
+      <p>- Up to 16 pcs parallel for on-grid & off-grid operation</p>
+    </div>
+
+    <!-- Buttons (always visible) -->
+    <div class="flex gap-2 mt-4">
+      <a href="#" target="_blank" 
+         class="buy-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+         Buy Now
+      </a>
+      <button class="add-cart-btn bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+         Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function toggleDescription(product) {
+      // Prevent the buttons from triggering the toggle when clicked
+      if (event.target.closest('.buy-btn') || event.target.closest('.add-cart-btn')) return;
+      product.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
     <!-- Fittings -->
     <div x-show="openSection === 'fittings'" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
       <div class="bg-gray-100 p-4 rounded shadow text-left product">
