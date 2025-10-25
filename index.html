@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- 📞 Floating Call Button -->
-<a href="tel:+254105837658" class="flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold">
-  <i class="fa-solid fa-phone fa-shake"></i>
-  <span>+254 105 837 658</span>
-</a>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Phone_font_awesome.svg" alt="Call Us">
+<!-- 📞 Floating Dialing Button -->
+<a href="tel:+254105837658" class="call-float" title="Dial Now">
+  <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Dial Now">
 </a>
 
 <style>
-<!-- 📞 Floating Call Button -->
-<a href="tel:+254105837658" class="call-float" title="Call us now">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Phone_font_awesome.svg" alt="Call Us">
-</a>
-
-<style>
-/* 📞 Floating Call Button Style */
+/* 📞 Floating Dialing Button Style */
 .call-float {
   position: fixed;
-  bottom: 95px; /* places it just above WhatsApp button */
+  bottom: 95px; /* just above WhatsApp button */
   right: 20px;
   z-index: 101;
   display: flex;
@@ -26,7 +17,7 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background-color: #007bff; /* blue */
+  background-color: #007bff;
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
   cursor: pointer;
@@ -58,8 +49,6 @@
     box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
   }
 }
-</style>
-
 </style>
 
   <!-- 🌟 Floating WhatsApp Button -->
