@@ -1,5 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- 🌟 Floating WhatsApp Button -->
+<a href="https://wa.me/254105837658" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Chat">
+</a>
+
+<style>
+/* ✨ Floating WhatsApp Button Style */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+  cursor: pointer;
+  animation: glowPulse 2s infinite ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float img {
+  width: 35px;
+}
+
+/* Hover effect for extra pop */
+.whatsapp-float:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 1);
+}
+
+/* 🌈 Glow + Pulse Animation */
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #25d366, 0 0 20px #25d366;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #25d366, 0 0 40px #25d366;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #25d366, 0 0 20px #25d366;
+  }
+}
+</style>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
