@@ -1,5 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- 📞 Floating Call Button -->
+<a href="tel:+254105837658" class="call-float" title="Call us now">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Phone_font_awesome.svg" alt="Call Us">
+</a>
+
+<style>
+/* 📞 Floating Call Button Style */
+.call-float {
+  position: fixed;
+  bottom: 95px; /* places it just above WhatsApp button */
+  right: 20px;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #007bff; /* blue */
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+  cursor: pointer;
+  animation: callGlowPulse 2s infinite ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.call-float img {
+  width: 30px;
+}
+
+.call-float:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 1);
+}
+
+/* 🔵 Glow + Pulse Animation */
+@keyframes callGlowPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #007bff, 0 0 40px #007bff;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
+  }
+}
+</style>
+
   <!-- 🌟 Floating WhatsApp Button -->
 <a href="https://wa.me/254105837658" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Chat">
