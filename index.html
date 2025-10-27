@@ -474,6 +474,89 @@
 </style>
 
 <!-- Sales Section -->
+
+  <style>
+  .desc-wrapper {
+    max-height: 64px; /* Collapsed height */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.4s ease;
+  }
+  .desc-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.3rem;
+    background: linear-gradient(to bottom, transparent, #f3f4f6);
+    transition: opacity 0.3s ease;
+  }
+  .desc-wrapper.expanded {
+    max-height: 1000px;
+  }
+  .desc-wrapper.expanded::after {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .desc-toggle {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #2563eb;
+    display: inline-block;
+    margin-top: 6px;
+    transition: .2s;
+  }
+</style>
+
+<script>
+function setupSeeMore() {
+  const products = document.querySelectorAll(".product:not(.processed-desc)");
+
+  products.forEach(card => {
+    const ps = card.querySelectorAll("p.text-gray-700");
+
+    if (ps.length < 3) return; // Must have multiple description lines
+
+    // ✅ Wrap descriptions into a container
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("desc-wrapper");
+
+    ps[0].before(wrapper); // Insert wrapper before first description
+
+    ps.forEach(p => wrapper.appendChild(p));
+
+    // ✅ Add toggle button
+    const btn = document.createElement("span");
+    btn.classList.add("desc-toggle");
+    btn.textContent = "See More";
+
+    btn.addEventListener("click", () => {
+      wrapper.classList.toggle("expanded");
+      btn.textContent =
+        wrapper.classList.contains("expanded")
+          ? "See Less"
+          : "See More";
+    });
+
+    wrapper.after(btn);
+
+    card.classList.add("processed-desc");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupSeeMore();
+
+  // ✅ Apply again when switching categories in Alpine
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("[x-on\\:click], [@click]")) {
+      setTimeout(setupSeeMore, 300);
+    }
+  });
+});
+</script>
 <section id="sales" class="py-16 bg-white text-center px-4">
   <h2 class="text-3xl font-bold text-brand mb-10">Products for Sale</h2>
 
