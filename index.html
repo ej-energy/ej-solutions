@@ -426,15 +426,34 @@
 <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 <!-- Floating Cart Button -->
-<div id="cart-icon" class="fixed bottom-6 right-6 bg-brand text-white p-4 rounded-full shadow-lg cursor-pointer flex items-center justify-center hover:bg-brand-dark transition z-50">
+<div id="cart-icon" 
+     class="fixed top-1/2 right-6 transform -translate-y-1/2 bg-brand text-white p-4 rounded-full shadow-lg cursor-pointer flex items-center justify-center hover:bg-brand-dark transition z-50 animate-slideInRight">
   🛒
-  <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">
+  <span id="cart-count" 
+        class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">
     0
   </span>
 </div>
 
 <style>
-  /* Pulse animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate(50px, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+</style>
+
+</div>
+
+<style>
   @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.3); }
@@ -443,8 +462,6 @@
   .pulse {
     animation: pulse 0.3s ease;
   }
-
-  /* Cart drawer styles */
   #cart-drawer {
     position: fixed;
     top: 0;
